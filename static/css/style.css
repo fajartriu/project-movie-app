@@ -1,0 +1,32 @@
+/* Style for card images */
+.card-img-top {
+  /* Set a fixed height for all images */
+  height: 500px; /* Adjust this value as needed */
+  /* Set object-fit to cover to ensure images fill the container */
+  object-fit: cover;
+}
+
+.light-text {
+  font-weight: lighter;
+}
+
+.img-details {
+  height: 700px;
+  object-fit: cover;
+}
+
+.text-format {
+  font-weight: bolder;
+}
+
+.card-link {
+  text-decoration: none; /* clear underline */
+}
+
+.movie-content {
+  padding-top: 70px;
+}
+
+.movie-card-details {
+  padding-bottom: 40px;
+}
