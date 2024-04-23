@@ -6,8 +6,6 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import ListView
 import json
 # Create your views here.
-
-
 def paginate_movies(request, movies_list):
     paginator = Paginator(movies_list, 8)
     page_number = request.GET.get('page')
@@ -22,14 +20,16 @@ def paginate_movies(request, movies_list):
     return movies, page_number
 
 def movies(request):
+    # get requested movies
     search = request.GET.get('search')
+    # if search is not empty
     if search:
         movies_list = Movies.objects.filter(name__icontains=search)
     else:
+    # if search is empty
         movies_list = Movies.objects.all()
-    
+    # get movies and page numbers
     movies, page_number = paginate_movies(request, movies_list)
-    
     context = {
         'movies': movies,
         'page_number': page_number,
